@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import { withAccelerate } from '@prisma/extension-accelerate'
 import { verify } from 'hono/jwt'
 import { PrismaClient } from '@prisma/client/edge'
-import { createBlog,updateBlog } from "medium-common";
+import { createBlogInput,updateBlogInput } from "1medium-common";
 export const blogRouter=new  Hono<{
 	Bindings: {
 		DATABASE_URL: string,
@@ -34,7 +34,7 @@ blogRouter.use('/*',async (c,next)=>{
   
 blogRouter.post('/',async (c)=>{
     const body=await c.req.json();
-    const {success}=createBlog.safeParse(body);
+    const {success}=createBlogInput.safeParse(body);
     if(!success){
         c.status(411);
         return c.json({
@@ -72,7 +72,7 @@ blogRouter.get('/bulk',async (c)=>{
 
 blogRouter.put('/',async (c)=>{
     const body=await c.req.json();
-    const {success}=updateBlog.safeParse(body);
+    const {success}=updateBlogInput.safeParse(body);
     if(!success){
         c.status(411);
         return c.json({

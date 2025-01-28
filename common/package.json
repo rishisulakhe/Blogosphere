@@ -1,7 +1,7 @@
 {
-  "name": "medium-common",
-  "version": "1.0.0",
-  "main": "dist/zod.js",
+  "name": "1medium-common",
+  "version": "1.0.4",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,7 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
+    "1medium-common": "file:",
     "common": "file:",
     "medium-common": "file:",
     "rishisulakhemedium-common": "file:",

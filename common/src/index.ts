@@ -4,9 +4,6 @@ export const signupInput=z.object({
     password:z.string().min(6),
     name:z.string().optional()
 })
-
-
-
 export const signinInput=z.object({
     username:z.string().email(),
     password:z.string().min(6),
@@ -26,10 +23,10 @@ export const updateBlogInput=z.object({
 })
 //type inference in zod
 
-export type SignupInput=z.infer<typeof signupInput>
-export type CreateBlogInput=z.infer<typeof createBlogInput>
+export type SignupParas=z.infer<typeof signupInput>
+export type CreateBlogParas=z.infer<typeof createBlogInput>
 
-export type UpdateBlogInput=z.infer<typeof updateBlogInput>
+export type UpdateBlogParas=z.infer<typeof updateBlogInput>
 
-export type SigninInput=z.infer<typeof signupInput>
+export type SigninParas=z.infer<typeof signinInput>
 
